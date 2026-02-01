@@ -4,6 +4,7 @@ WORKDIR /bonus
 
 COPY ./ ./
 
+RUN go mod init bonus
 RUN go mod tidy
 RUN go mod vendor
 RUN go build -o bonus ./cmd/main.go

@@ -4,6 +4,7 @@ WORKDIR /ticket
 
 COPY ./ ./
 
+RUN go mod init ticket
 RUN go mod tidy
 RUN go mod vendor
 RUN go build -o ticket ./cmd/main.go

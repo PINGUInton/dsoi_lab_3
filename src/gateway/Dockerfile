@@ -4,6 +4,7 @@ WORKDIR /gateway
 
 COPY ./ ./
 
+RUN go mod init gateway
 RUN go mod tidy
 RUN go mod vendor
 RUN go build -o gateway ./cmd/main.go

@@ -4,6 +4,7 @@ WORKDIR /flight
 
 COPY ./ ./
 
+RUN go mod init flight
 RUN go mod tidy
 RUN go mod vendor
 RUN go build -o flight ./cmd/main.go
