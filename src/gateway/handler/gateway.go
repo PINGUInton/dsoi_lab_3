@@ -497,7 +497,7 @@ func (h *Handler) DeleteTicketUSer(c *gin.Context) {
 	if err != nil || status >= 400 {
 		if err := rollback.EnqueueRetry(rollback.RetryRequest{
 			Method:  "DELETE",
-			URL:     "http://localhost:8050/bonusUpdateDelete/" + strconv.Itoa(150),
+			URL:     "http://bonus:8050/bonusUpdateDelete/" + strconv.Itoa(150),
 			Headers: headers,
 		}); err != nil {
 			log.Printf("Failed to enqueue request: %v", err)
